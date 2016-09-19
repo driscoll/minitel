@@ -173,7 +173,7 @@ def c_array(cebra, name = 'data', line_length = 20):
 
     output = []
     line = 'const int {0}_length = {1};\n'.format(name, num_bytes);
-    line += 'PROGMEM prog_uchar {0}[{1}]'.format(name, num_bytes)
+    line += 'const char {0}[{0}_length] PROGMEM'.format(name, num_bytes)
     line += ' = {\n'
     output.append(line)
 
